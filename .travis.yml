@@ -1,0 +1,32 @@
+dist: trusty
+sudo: false
+language: php
+
+php:
+  - 7.1
+  - nightly
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+before_install:
+  - composer self-update
+
+install: travis_retry composer install
+
+script:
+  - ./vendor/bin/phpunit
+
+jobs:
+  allow_failures:
+    - php: nightly
+
+  include:
+    - stage: Code-style
+      script:
+        - ./vendor/bin/phpcs
+
+    - stage: Static Analysis
+      script:
+        - ./vendor/bin/phpstan analyse src test
