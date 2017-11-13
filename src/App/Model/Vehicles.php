@@ -46,7 +46,7 @@ class Vehicles implements \JsonSerializable
         return $this->vehicles;
     }
 
-    function jsonSerialize()
+    public function jsonSerialize()
     {
         return [
             'Count' => $this->count(),

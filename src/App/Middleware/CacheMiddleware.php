@@ -73,14 +73,16 @@ class CacheMiddleware implements ServerMiddlewareInterface
         }
 
         $cacheControl = $response->getHeaderLine('Cache-Control');
-        if ($cacheControl && (stripos($cacheControl, 'no-cache') !== false || stripos($cacheControl, 'no-store') !== false)) {
+        if ($cacheControl
+            && (stripos($cacheControl, 'no-cache') !== false || stripos($cacheControl, 'no-store') !== false)) {
             return false;
         }
 
         return true;
     }
 
-    private function getKey(ServerRequestInterface $request) : string {
+    private function getKey(ServerRequestInterface $request) : string
+    {
         return sprintf(
             '%s.%s',
             self::PREFIX,

@@ -15,11 +15,13 @@ class GuzzleClient extends Client implements ClientInterface
         parent::__construct($config);
     }
 
-    public function get(string $uri, array $options = []) : ResponseInterface {
+    public function get(string $uri, array $options = []) : ResponseInterface
+    {
         return parent::get($uri, $options);
     }
 
-    public function getAsync(string $uri, array $options = []) : PromiseInterface {
+    public function getAsync(string $uri, array $options = []) : PromiseInterface
+    {
         return parent::getAsync($uri, $options);
     }
 }
