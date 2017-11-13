@@ -6,20 +6,15 @@ class Vehicle implements \JsonSerializable
 {
     /**
      * @var int
-     *
-     * @SWG\Property()
      */
     private $id;
 
     /**
      * @var string
-     *
-     * @SWG\Property()
      */
     private $description;
 
     /**
-     * Vehicle constructor.
      * @param int $id
      * @param string $description
      */

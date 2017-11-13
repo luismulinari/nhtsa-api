@@ -4,9 +4,6 @@ namespace App\Model;
 
 use Assert\Assertion;
 
-/**
- * @SWG\Definition(definition="Vehicles")
- */
 class Vehicles implements \JsonSerializable
 {
     /**
